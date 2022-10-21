@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="MultiCol-SLAM"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\..\..\usr\local\include\;CMake Files\..\..\..\..\..\..\..\..\usr\local\include\opencv3.4.5\;CMake Files\..\..\..\..\..\..\..\..\usr\local\include\opencv3.4.5\share\;CMake Files\..\..\..\..\..\..\..\..\usr\local\include\opencv3.4.5\share\OpenCV\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\Pangolin\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="multi_col_slam_lafida">
+				<Option output="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/Examples/Lafida/multi_col_slam_lafida" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/Examples/Lafida"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty/OpenGV/include"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty/g2o"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty/Eigen"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty"/>
+					<Add directory="/usr/local/include/eigen3"/>
+					<Add directory="/usr/local/include/opencv3.4.5/include"/>
+					<Add directory="/usr/local/include/opencv3.4.5/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 multi_col_slam_lafida"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="multi_col_slam_lafida/fast">
+				<Option output="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/Examples/Lafida/multi_col_slam_lafida" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/Examples/Lafida"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty/OpenGV/include"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty/g2o"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty/Eigen"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty"/>
+					<Add directory="/usr/local/include/eigen3"/>
+					<Add directory="/usr/local/include/opencv3.4.5/include"/>
+					<Add directory="/usr/local/include/opencv3.4.5/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 multi_col_slam_lafida/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MultiCol-SLAM">
+				<Option output="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/lib/libMultiCol-SLAM.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty/OpenGV/include"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty/g2o"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty/Eigen"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty"/>
+					<Add directory="/usr/local/include/eigen3"/>
+					<Add directory="/usr/local/include/opencv3.4.5/include"/>
+					<Add directory="/usr/local/include/opencv3.4.5/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 MultiCol-SLAM"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MultiCol-SLAM/fast">
+				<Option output="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/lib/libMultiCol-SLAM.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty/OpenGV/include"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty/g2o"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty/Eigen"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include"/>
+					<Add directory="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty"/>
+					<Add directory="/usr/local/include/eigen3"/>
+					<Add directory="/usr/local/include/opencv3.4.5/include"/>
+					<Add directory="/usr/local/include/opencv3.4.5/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 MultiCol-SLAM/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/Examples/Lafida/mult_col_slam_lafida.cpp">
+			<Option target="multi_col_slam_lafida"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cConverter.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cLocalMapping.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cLoopClosing.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cMap.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cMapPoint.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cMapPublisher.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cMultiFrame.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cMultiFramePublisher.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cMultiInitializer.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cMultiKeyFrame.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cMultiKeyFrameDatabase.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cORBVocabulary.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cORBmatcher.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cOptimizer.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cSim3Solver.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cSystem.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cTracking.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cViewer.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cam_model_omni.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/cam_system_omni.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/g2o_MultiCol_sim3_expmap.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/g2o_MultiCol_vertices_edges.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/mdBRIEFextractorOct.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/include/misc.h">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cConverter.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cLocalMapping.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cLoopClosing.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cMap.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cMapPoint.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cMapPublisher.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cMultiFrame.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cMultiFramePublisher.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cMultiInitializer.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cMultiKeyFrame.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cMultiKeyFrameDatabase.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cORBmatcher.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cOptimizer.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cOptimizerLoopStuff.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cSim3Solver.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cSystem.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cTracking.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cViewer.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cam_model_omni.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/cam_system_omni.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/g2o_MultiCol_sim3_expmap.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/g2o_MultiCol_vertices_edges.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/mdBRIEFextractorOct.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/src/misc.cpp">
+			<Option target="MultiCol-SLAM"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/../../../../../../../../usr/local/include/opencv3.4.5/share/OpenCV/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\include\opencv3.4.5\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/../../../../../../../../usr/local/include/opencv3.4.5/share/OpenCV/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\include\opencv3.4.5\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/../../../../../../../../usr/local/include/opencv3.4.5/share/OpenCV/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\include\opencv3.4.5\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/../../../../../../../../usr/local/include/opencv3.4.5/share/OpenCV/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\include\opencv3.4.5\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/../../../../../../../../usr/local/lib/cmake/Pangolin/PangolinConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\Pangolin\"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/../../../../../../../../usr/local/lib/cmake/Pangolin/PangolinConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\Pangolin\"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/../../../../../../../../usr/local/lib/cmake/Pangolin/PangolinTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\Pangolin\"/>
+		</Unit>
+		<Unit filename="/home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/../../../../../../../../usr/local/lib/cmake/Pangolin/PangolinTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\Pangolin\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

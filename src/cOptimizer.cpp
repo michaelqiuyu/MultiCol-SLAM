@@ -361,6 +361,7 @@ namespace MultiColSLAM
 					vPoint->setId(currVertexIdx);
 					vPoint->setFixed(true);
 
+					// 3D点
 					optimizer.addVertex(vPoint);
 					pointIdx = currVertexIdx;
 					mapPointId_to_cont_g2oId[pMP->mnId] = currVertexIdx;

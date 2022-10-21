@@ -42,7 +42,7 @@ namespace MultiColSLAM
 	{
 	public:
 		EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
-		VertexOmniCameraParameters() {}
+//		VertexOmniCameraParameters() {}
 
 		VertexOmniCameraParameters(cCamModelGeneral_ camModel_)
 			: camModel(camModel_)

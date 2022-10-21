@@ -21,7 +21,7 @@
 /*
 * MultiCol-SLAM is based on ORB-SLAM2 which was also released under GPLv3
 * For more information see <https://github.com/raulmur/ORB_SLAM2>
-* Ra�l Mur-Artal <raulmur at unizar dot es> (University of Zaragoza)
+* Ra�l Mur-Artal <raulmur at unizar dot es> (University of Zaragoza)
 */
 
 #include "cConverter.h"
@@ -57,6 +57,7 @@ namespace MultiColSLAM
 
 	std::vector<cv::Mat> cConverter::toDescriptorVector(const std::vector<cv::Mat>& Descriptors)
 	{
+	    // 与ORB-SLAM2不同的是，这里将所有的特征点遍历合成
 		std::vector<cv::Mat> vDesc;
 		for (int c = 0; c < Descriptors.size(); ++c)
 			for (int j = 0; j < Descriptors[c].rows; j++)

@@ -21,7 +21,7 @@
 /*
 * MultiCol-SLAM is based on ORB-SLAM2 which was also released under GPLv3
 * For more information see <https://github.com/raulmur/ORB_SLAM2>
-* Ra�l Mur-Artal <raulmur at unizar dot es> (University of Zaragoza)
+* Ra�l Mur-Artal <raulmur at unizar dot es> (University of Zaragoza)
 */
 
 #include "cORBmatcher.h"
@@ -886,6 +886,7 @@ int cORBmatcher::SearchByBoW(cMultiKeyFrame *pKF1,
 	cMultiKeyFrame *pKF2,
 	vector<cMapPoint *> &vpMatches12)
 {
+    // 暴力匹配，没有使用词袋进行加速
 	vector<cMapPoint*> vpMapPoints1 = pKF1->GetMapPointMatches();
 	std::vector<cv::Mat> Descriptors1 = pKF1->GetAllDescriptors();
 	std::vector<cv::Mat> Descriptors1masks = pKF1->GetAllDescriptorMasks();
@@ -1069,6 +1070,7 @@ int cORBmatcher::SearchForTriangulationRaw(cMultiKeyFrame *pKF1,
 		if (vDistIndex.empty())
 			continue;
 
+		// notes：这里可能有问题，上面构建的匹配有可能在同一个相机帧里面有多个匹配，至少应该删除，保证相同相机只有一个匹配
 		sort(vDistIndex.begin(), vDistIndex.end());
 		int BestDist = vDistIndex.front().first;
 		int DistTh = cvRound(2 * BestDist);

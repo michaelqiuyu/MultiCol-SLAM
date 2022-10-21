@@ -60,24 +60,24 @@ namespace MultiColSLAM
 			Iheight(0),
 			p1(1)
 		{}
-
-		cCamModelGeneral_(double cdeu0v0[], cv::Mat_<double> p_, cv::Mat_<double> invP_) :
-			c(cdeu0v0[0]),
-			d(cdeu0v0[1]),
-			e(cdeu0v0[2]),
-			u0(cdeu0v0[3]),
-			v0(cdeu0v0[4]),
-			p(p_),
-			invP(invP_)
-		{
-			// initialize degree of polynomials
-			p_deg = (p_.rows > 1) ? p_.rows : p_deg = p_.cols;
-			invP_deg = (p_.rows > 1) ? invP_deg = invP_.rows : invP_deg = invP_.cols;
-
-			cde1 = (cv::Mat_<double>(2, 2) << c, d, e, 1.0);
-			p1 = p.at<double>(0);
-			invAffine = c - d*e;
-		}
+//
+//		cCamModelGeneral_(double cdeu0v0[], cv::Mat_<double> p_, cv::Mat_<double> invP_) :
+//			c(cdeu0v0[0]),
+//			d(cdeu0v0[1]),
+//			e(cdeu0v0[2]),
+//			u0(cdeu0v0[3]),
+//			v0(cdeu0v0[4]),
+//			p(p_),
+//			invP(invP_)
+//		{
+//			// initialize degree of polynomials
+//			p_deg = (p_.rows > 1) ? p_.rows : p_deg = p_.cols;
+//			invP_deg = (p_.rows > 1) ? invP_deg = invP_.rows : invP_deg = invP_.cols;
+//
+//			cde1 = (cv::Mat_<double>(2, 2) << c, d, e, 1.0);
+//			p1 = p.at<double>(0);
+//			invAffine = c - d*e;
+//		}
 
 		cCamModelGeneral_(double cdeu0v0[],
 			cv::Mat_<double> p_, cv::Mat_<double> invP_,
@@ -106,14 +106,14 @@ namespace MultiColSLAM
 		void WorldToImg(const double& x, const double& y, const double& z,    // 3D scene point
 			double& u, double& v) const;
 
-		void WorldToImg(const cv::Point3_<double>& X,			// 3D scene point
-			cv::Point_<double>& m);
+//		void WorldToImg(const cv::Point3_<double>& X,			// 3D scene point
+//			cv::Point_<double>& m);
 
 		void WorldToImg(const cv::Vec3d& X,			// 3D scene point
 			cv::Vec2d& m);
 
-		void WorldToImg(const cv::Vec3d& X,			// 3D scene point
-			cv::Vec2f& m);
+//		void WorldToImg(const cv::Vec3d& X,			// 3D scene point
+//			cv::Vec2f& m);
 
 		void ImgToWorld(double& x, double& y, double& z,						// 3D scene point
 			const double& u, const double& v);
@@ -121,8 +121,8 @@ namespace MultiColSLAM
 		void ImgToWorld(cv::Point3_<double>& X,						// 3D scene point
 			const cv::Point_<double>& m);
 
-		void ImgToWorld(cv::Vec3d& X,						// 3D scene point
-			const cv::Vec2d& m);
+//		void ImgToWorld(cv::Vec3d& X,						// 3D scene point
+//			const cv::Vec2d& m);
 
 		void undistortPointsOcam(
 			const double& ptx, const double& pty,
@@ -145,17 +145,17 @@ namespace MultiColSLAM
 		}
 
 		// get functions
-		double Get_c() { return c; }
-		double Get_d() { return d; }
-		double Get_e() { return e; }
+//		double Get_c() { return c; }
+//		double Get_d() { return d; }
+//		double Get_e() { return e; }
 
 		double Get_u0() { return u0; }
 		double Get_v0() { return v0; }
 
-		int GetInvDeg() { return invP_deg; }
-		int GetPolDeg() { return p_deg; }
+//		int GetInvDeg() { return invP_deg; }
+//		int GetPolDeg() { return p_deg; }
 
-		cv::Mat_<double> Get_invP() { return invP; }
+//		cv::Mat_<double> Get_invP() { return invP; }
 		cv::Mat_<double> Get_P() { return p; }
 
 		double GetWidth() { return Iwidth; }

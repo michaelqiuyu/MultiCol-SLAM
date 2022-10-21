@@ -66,44 +66,44 @@ namespace MultiColSLAM
 		z /= norm;
 	}
 
-	void cCamModelGeneral_::ImgToWorld(cv::Vec3d& X,						// 3D scene point
-		const cv::Vec2d& m) 			            // 2D image point
-	{
-		//double invAff = c - d*e;
-		const double u_t = m(0) - u0;
-		const double v_t = m(1) - v0;
-		// inverse affine matrix image to sensor plane conversion
-		X(0) = (u_t - d * v_t) / this->invAffine;
-		X(1) = (-e * u_t + c * v_t) / this->invAffine;
-		const double X2 = X(0) * X(0);
-		const double Y2 = X(1) * X(1);
-		X(2) = -horner((double*)p.data, p_deg, sqrt(X2 + Y2));
+//	void cCamModelGeneral_::ImgToWorld(cv::Vec3d& X,						// 3D scene point
+//		const cv::Vec2d& m) 			            // 2D image point
+//	{
+//		//double invAff = c - d*e;
+//		const double u_t = m(0) - u0;
+//		const double v_t = m(1) - v0;
+//		// inverse affine matrix image to sensor plane conversion
+//		X(0) = (u_t - d * v_t) / this->invAffine;
+//		X(1) = (-e * u_t + c * v_t) / this->invAffine;
+//		const double X2 = X(0) * X(0);
+//		const double Y2 = X(1) * X(1);
+//		X(2) = -horner((double*)p.data, p_deg, sqrt(X2 + Y2));
+//
+//		// normalize vectors spherically
+//		double norm = sqrt(X2 + Y2 + X(2)*X(2));
+//		X(0) /= norm;
+//		X(1) /= norm;
+//		X(2) /= norm;
+//	}
 
-		// normalize vectors spherically
-		double norm = sqrt(X2 + Y2 + X(2)*X(2));
-		X(0) /= norm;
-		X(1) /= norm;
-		X(2) /= norm;
-	}
 
-
-	void cCamModelGeneral_::WorldToImg(const cv::Point3_<double>& X,			// 3D scene point
-		cv::Point_<double>& m)			// 2D image point
-	{
-		double norm = sqrt(X.x*X.x + X.y*X.y);
-
-		if (norm == 0.0)
-			norm = 1e-14;
-
-		const double theta = atan(-X.z / norm);
-		const double rho = horner((double*)invP.data, invP_deg, theta);
-
-		const double uu = X.x / norm * rho;
-		const double vv = X.y / norm * rho;
-
-		m.x = uu*c + vv*d + u0;
-		m.y = uu*e + vv + v0;
-	}
+//	void cCamModelGeneral_::WorldToImg(const cv::Point3_<double>& X,			// 3D scene point
+//		cv::Point_<double>& m)			// 2D image point
+//	{
+//		double norm = sqrt(X.x*X.x + X.y*X.y);
+//
+//		if (norm == 0.0)
+//			norm = 1e-14;
+//
+//		const double theta = atan(-X.z / norm);
+//		const double rho = horner((double*)invP.data, invP_deg, theta);
+//
+//		const double uu = X.x / norm * rho;
+//		const double vv = X.y / norm * rho;
+//
+//		m.x = uu*c + vv*d + u0;
+//		m.y = uu*e + vv + v0;
+//	}
 
 	void cCamModelGeneral_::WorldToImg(const cv::Vec3d& X,			// 3D scene point
 		cv::Vec2d& m)			// 2D image point
@@ -124,24 +124,24 @@ namespace MultiColSLAM
 		m(1) = uu*e + vv + v0;
 	}
 
-	void cCamModelGeneral_::WorldToImg(const cv::Vec3d& X,			// 3D scene point
-		cv::Vec2f& m)			// 2D image point
-	{
-		double norm = cv::sqrt(X(0)*X(0) + X(1)*X(1));
-
-		if (norm == 0.0)
-			norm = 1e-14;
-
-		const double theta = atan(-X(2) / norm);
-
-		const double rho = horner((double*)invP.data, invP_deg, theta);
-
-		const double uu = X(0) / norm * rho;
-		const double vv = X(1) / norm * rho;
-
-		m(0) = uu*c + vv*d + u0;
-		m(1) = uu*e + vv + v0;
-	}
+//	void cCamModelGeneral_::WorldToImg(const cv::Vec3d& X,			// 3D scene point
+//		cv::Vec2f& m)			// 2D image point
+//	{
+//		double norm = cv::sqrt(X(0)*X(0) + X(1)*X(1));
+//
+//		if (norm == 0.0)
+//			norm = 1e-14;
+//
+//		const double theta = atan(-X(2) / norm);
+//
+//		const double rho = horner((double*)invP.data, invP_deg, theta);
+//
+//		const double uu = X(0) / norm * rho;
+//		const double vv = X(1) / norm * rho;
+//
+//		m(0) = uu*c + vv*d + u0;
+//		m(1) = uu*e + vv + v0;
+//	}
 
 	void cCamModelGeneral_::WorldToImg(const double& x, const double& y, const double& z,    // 3D scene point
 		double& u, double& v) const							 // 2D image point

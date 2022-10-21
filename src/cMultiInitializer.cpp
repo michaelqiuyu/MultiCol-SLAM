@@ -160,7 +160,7 @@ namespace MultiColSLAM
 					cam_matchidx2));
 				cv::Vec3d bear1 = mvKeysRays1[cam_matchidx1];
 				cv::Vec3d bear2 = mvKeysRays2[cam_matchidx2];
-				cv::Vec3d res = bear1.cross(cConverter::toCvMat(R)*bear2);
+				cv::Vec3d res = bear1.cross(cConverter::toCvMat(R)*bear2);  // 两条射线的sin值
 				norms.push_back(cv::norm(res));
 			}
 			if (ransac.inliers_.size() <= 0)
@@ -182,6 +182,9 @@ namespace MultiColSLAM
 			if (nr_recon[c] > 60 &&
 				normsAll[c] > 0.06)
 			{
+			    /**
+			     * notes: 此处的逻辑有问题，并没有获取到视差最大的相机，比如normsAll = 0.1, 0.065, 0.066，最后bestCam = 2
+			     */
 				init = true;
 				bestCam = c;
 				if (c > 0)

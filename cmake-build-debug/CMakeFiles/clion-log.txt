@@ -1,0 +1,9 @@
+/home/xiongchao/softwares/clion-2020.2.5/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM
+Build type: Debug
+OpenGV include DIR /home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty/OpenGV/include
+g2o include DIR /home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty/g2o
+Eigen include DIR /home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/ThirdParty/Eigen
+MultiCol-SLAM
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/xiongchao/workspace/leador/opensource/c++/MultiCol-SLAM/MultiCol-SLAM/cmake-build-debug

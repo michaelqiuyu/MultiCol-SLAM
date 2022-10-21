@@ -21,7 +21,7 @@
 /*
 * MultiCol-SLAM is based on ORB-SLAM2 which was also released under GPLv3
 * For more information see <https://github.com/raulmur/ORB_SLAM2>
-* Ra�l Mur-Artal <raulmur at unizar dot es> (University of Zaragoza)
+* Ra�l Mur-Artal <raulmur at unizar dot es> (University of Zaragoza)
 */
 
 #include <opencv2/opencv.hpp>
@@ -234,6 +234,7 @@ cv::Matx44d cTracking::GrabImageSet(const std::vector<cv::Mat>& imgSet,
 	return mCurrentFrame.GetPose();
 }
 
+// 此函数始终返回true，并且调用的函数并没有接收这个函数的返回值
 bool cTracking::Track()
 {
     // Depending on the state of the Tracker we perform different tasks
@@ -419,9 +420,15 @@ void cTracking::Initialize()
     cv::Vec3d tcw; // Current Camera Translation
     vector<bool> vbTriangulated; // Triangulated Correspondences (mvIniMatches)
 	int leadingCam = 0;
+	/**
+	 * notes:
+	 *      1. 从初始化的逻辑里面，按照单目初始化的方式分别初始化，因此尺度问题没有解决
+	 *      2. 后面又直接使用了相机的外参，而相机的外参是有尺度的，造成了整个系统的尺度是模糊的
+	 */
 	if (mpInitializer->
 		Initialize(mCurrentFrame, mvIniMatches, Rcw, tcw, mvIniP3D, vbTriangulated, leadingCam))
     {
+	    // mvIniP3D表示最优的相机的对应重建的地图点；vbTriangulated返回的是最优相机的结果
 		for (size_t i = 0, iend = mvIniMatches.size(); i < iend; ++i)
         {
             if (mvIniMatches[i] >= 0 && !vbTriangulated[i])
@@ -441,10 +448,11 @@ void cTracking::CreateInitialMap(cv::Matx33d &Rcw, cv::Vec3d &tcw, int leadingCa
 	// Set Frame Poses
 	// we have to calculate the multi cam sys poses from the single camera poses
 	cv::Matx44d invMc = mInitialFrame.camSystem.Get_M_t() *
-		cConverter::invMat(mInitialFrame.camSystem.Get_M_c(leadingCam));
+		cConverter::invMat(mInitialFrame.camSystem.Get_M_c(leadingCam));  // 对第一帧而言M_T为单位阵
 	cv::Matx44d Mc = mInitialFrame.camSystem.Get_M_c(leadingCam);
 	//cv::Matx44d invMc = Mc.inv();
 	mInitialFrame.SetPose(invMc);
+	// Rcw和tcw表示第二帧到第一帧的位姿Tc1c2
 	cv::Matx44d invCurr = cConverter::Rt2Hom(Rcw, tcw)*invMc;
 	mCurrentFrame.SetPose(invCurr); // inverse!
 
@@ -505,6 +513,7 @@ void cTracking::CreateInitialMap(cv::Matx33d &Rcw, cv::Vec3d &tcw, int leadingCa
 	vector<cMapPoint*> vpAllMapPoints1 = pKFini->GetMapPointMatches();
 	vector<cMapPoint*> vpAllMapPoints2 = pKFcur->GetMapPointMatches();
 
+	// 这里优化的时候仅仅只有最有相机对应的地图点
 	cOptimizer::GlobalBundleAdjustment(mpMap, true);
 
 	cORBmatcher tempMatcher(0.8, checkOrientation, 
@@ -516,7 +525,7 @@ void cTracking::CreateInitialMap(cv::Matx33d &Rcw, cv::Vec3d &tcw, int leadingCa
 	{
 		// skip the same cam
 		// we just want to search in all other cams
-		if (c == leadingCam)
+		if (c == leadingCam)  // leadingCam为前面计算得到的最好的相机
 			continue;
 
 		cv::Matx44d relOri = Mc * cConverter::invMat(mInitialFrame.camSystem.Get_M_c(c));
@@ -591,7 +600,7 @@ void cTracking::CreateInitialMap(cv::Matx33d &Rcw, cv::Vec3d &tcw, int leadingCa
 			{
 				cv::Vec3d wp = pMP->GetWorldPos();
 
-				pMP->AddObservation(pKFini, bestIdx2);
+				pMP->AddObservation(pKFini, bestIdx2);  // 这里的bestIdx2不会覆盖原来存在的
 				// because we can have multiple observations per mappoint,
 				pKFini->AddMapPoint(pMP, bestIdx2);
 				mInitialFrame.mvpMapPoints[bestIdx2] = pMP;
@@ -624,7 +633,7 @@ void cTracking::CreateInitialMap(cv::Matx33d &Rcw, cv::Vec3d &tcw, int leadingCa
 			cv::Vec3d pos = pMP->GetWorldPos();
 			if (vpAllMapPoints2[iMP])
 			{
-				if (!(c == leadingCam))
+				if (!(c == leadingCam)) // 同样需要避免相同相机，为什么不跟上面写法一致
 				{
 					cv::Vec2d uv;
 					cv::Vec3d wp = pMP->GetWorldPos();
@@ -746,6 +755,8 @@ bool cTracking::TrackPreviousFrame()
             vpMapPointMatches = vector<cMapPoint*>
 				(mCurrentFrame.mvpMapPoints.size(), static_cast<cMapPoint*>(NULL));
             nmatches = 0;
+
+            // xc's todo: 此处是否应该直接结束
         }
     }
 	mCurrentFrame.mvpMapPoints = vpMapPointMatches;
@@ -874,7 +885,7 @@ bool cTracking::TrackLocalMap()
 	if (mCurrentFrame.mnId < mnLastRelocFrameId + mMaxFrames && mnMatchesInliers < 15)
         return false;
 
-
+    // 这里的判断覆盖了上面的判断，上面的语句无效
 	if (mnMatchesInliers < 15)
         return false;
 	else
@@ -1263,6 +1274,7 @@ bool cTracking::Relocalisation()
 		}
 		else
 		{
+		    // paper: Using Multi-Camera Systems in Robotics Efficient Solutions to the NPnP Problem
 			trafo = opengv::absolute_pose::gpnp(adapter, ransac.inliers_);
 
 			cv::Matx44d trafoOut = cConverter::ogv2ocv(trafo);

@@ -16,6 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with MultiCol-SLAM . If not, see <http://www.gnu.org/licenses/>.
 
+cmake_minimum_required(VERSION 2.8)
 project (MultiCol-SLAM)
 
 IF(NOT CMAKE_BUILD_TYPE)
@@ -40,7 +41,12 @@ ENDIF()
 
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 
-find_package(OpenCV REQUIRED)
+set(CMAKE_PREFIX_PATH "/usr/local/include/opencv3.4.5")
+find_package(OpenCV 3.4.5)
+if(NOT OpenCV_FOUND)
+    message(FATAL_ERROR "OpenCV3.4.5 not found.")
+endif()
+
 find_package(Pangolin REQUIRED)
 
 # ==============================================================================

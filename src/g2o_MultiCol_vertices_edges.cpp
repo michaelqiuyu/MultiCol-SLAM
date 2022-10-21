@@ -38,16 +38,16 @@ void EdgeProjectXYZ2MCS::computeError()
 	const VertexOmniCameraParameters* camera = static_cast<const VertexOmniCameraParameters*>(_vertices[3]);
 
 	// pose of camera in worldframe
-	cv::Matx44d Mct = cayley2hom(Mt->estimate())*cayley2hom(Mc->estimate());
-	cv::Matx44d cMct_inv = cConverter::invMat(Mct);
+	cv::Matx44d Mct = cayley2hom(Mt->estimate())*cayley2hom(Mc->estimate());  // Tcw
+	cv::Matx44d cMct_inv = cConverter::invMat(Mct);  // Twc
 
 	// calculate the rotated point in the MCS frame
-	cv::Vec4d pt3_rot = cMct_inv * cv::Vec4d(pt3->estimate()(0), pt3->estimate()(1), pt3->estimate()(2), 1.0);
+	cv::Vec4d pt3_rot = cMct_inv * cv::Vec4d(pt3->estimate()(0), pt3->estimate()(1), pt3->estimate()(2), 1.0);  // 齐次式计算相机系坐标
 	// project the point to the image
 	//cCamModelGeneral_ camModelTemp;
 	//camModelTemp.fromVector(camera->estimate());
 	double u = 0.0; double v = 0.0;
-	camera->camModel.WorldToImg(pt3_rot(0), pt3_rot(1), pt3_rot(2), u, v);
+	camera->camModel.WorldToImg(pt3_rot(0), pt3_rot(1), pt3_rot(2), u, v);  // 图像坐标
 	_error(0) = _measurement(0) - u;
 	_error(1) = _measurement(1) - v;
 }
@@ -113,7 +113,7 @@ void EdgeProjectXYZ2MCS::linearizeOplus()
 			_jacobianOplus[3](1, i) = -jacs(1, i + 9);
 		}
 	}
-		
+
 }
 
 
@@ -151,7 +151,7 @@ void mcsJacs1(const cv::Vec3d& pt3,
 	const double d = camModelData(1, 0);
 	const double e = camModelData(2, 0);
 
-	// interior orientation inverse poly  
+	// interior orientation inverse poly
 	const double a1 = camModelData(16, 0);
 	const double a2 = camModelData(15, 0);
 	const double a3 = camModelData(14, 0);
@@ -1061,7 +1061,19 @@ void mcsJacs1(const cv::Vec3d& pt3,
 	const double t898 = a7*t117*t161*t795*5.0;
 	const double t899 = a9*t116*t161*t795*3.0;
 	const double t900 = t894 + t895 + t896 + t897 + t898 + t899 - a10*t115*t161*t795*2.0 - a2*t115*t118*t161*t795*1.0E1 - a6*t115*t117*t161*t795*6.0 - a8*t115*t116*t161*t795*4.0 - a4*t115*t116*t117*t161*t795*8.0;
- 
+
+#if 0
+	std::cout << "t872= " << t872 << std::endl;
+    std::cout << "t873= " << t873 << std::endl;
+    std::cout << "t874= " << t874 << std::endl;
+    std::cout << "t875= " << t875 << std::endl;
+    std::cout << "t876= " << t876 << std::endl;
+    std::cout << "t877 = " <<t877 << std::endl;
+    std::cout << "t878 = " <<t878 << std::endl;
+    std::cout << "t881 = " <<t881 << std::endl;
+    std::cout << "t882 = " <<t882 << std::endl;
+#endif
+
 	jacs(0, 0) = t127*t170*(a11*t161*t166 + a3*t118*t161*t166*9.0 + a7*t117*t161*t166*5.0 + a9*t116*t161*t166*3.0 - a10*t115*t161*t166*2.0 + a1*t116*t118*t161*t166*1.1E1 - a2*t115*t118*t161*t166*1.0E1 + a5*t116*t117*t161*t166*7.0 - a6*t115*t117*t161*t166*6.0 - a8*t115*t116*t161*t166*4.0 - a4*t115*t116*t117*t161*t166*8.0) - t176*1.0 / sqrt(t111 + t21*t21)*(c*t67 - d*t63) - t163*t170*t176*t177*(1.0 / 2.0);
 	jacs(0, 1) = t127*t176*(c*t120 - d*t91) + t127*t170*t808 + t163*t170*t176*(t185 - t188)*(1.0 / 2.0);
 	jacs(0, 2) = t127*t176*(c*t123 - d*t96) - t127*t170*t815 + t163*t170*t176*(t191 - t194)*(1.0 / 2.0);
